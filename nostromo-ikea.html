@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USCSS Nostromo — Galley Supply Requisition</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0f; --panel: #12161c; --border: #2a3040;
+    --accent: #d4a843; --accent-dim: #8a6e2a;
+    --text: #c8cdd4; --text-dim: #6a7080;
+    --green: #4a9e6a; --green-dim: #1a3a28; --white: #e8ecf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Chakra Petch', 'Segoe UI', monospace; min-height: 100vh; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px); pointer-events: none; z-index: 1000; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+  .header { border: 1px solid var(--border); padding: 24px 30px; margin-bottom: 30px; position: relative; background: linear-gradient(180deg, rgba(30,35,45,0.6) 0%, var(--panel) 100%); }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 40%, transparent 100%); }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .header-logo { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 3px; text-transform: uppercase; }
+  .header-status { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--green); letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
+  .header-status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .header h1 { font-family: 'Chakra Petch', monospace; font-size: 28px; font-weight: 700; color: var(--accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  .header-sub { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; }
+  .product-card { display: grid; grid-template-columns: 280px 1fr 120px; border: 1px solid var(--border); margin-bottom: 4px; background: var(--panel); transition: background 0.2s, border-color 0.2s; }
+  .product-card:hover { background: rgba(212,168,67,0.04); border-color: var(--accent-dim); }
+  .product-img-cell { padding: 12px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border); background: #fff; overflow: hidden; }
+  .product-img-cell img { width: 100%; height: 200px; object-fit: contain; }
+  .product-info { padding: 16px 20px; }
+  .product-name { font-family: 'Chakra Petch', monospace; font-size: 20px; font-weight: 700; color: var(--accent); letter-spacing: 2px; margin-bottom: 2px; }
+  .product-type { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 10px; }
+  .product-desc { font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 8px; }
+  .nostromo-match { font-size: 12px; line-height: 1.5; color: var(--green); font-style: italic; margin-bottom: 10px; padding: 8px 12px; background: var(--green-dim); border-left: 2px solid var(--green); }
+  .match-rating { display: flex; gap: 3px; margin-bottom: 10px; }
+  .mb { width: 24px; height: 6px; background: var(--border); }
+  .mb.a { background: var(--accent); }
+  .product-link { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
+  .product-link:hover { text-decoration: underline; }
+  .product-price-cell { padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-left: 1px solid var(--border); }
+  .product-price { font-family: 'Share Tech Mono', monospace; font-size: 20px; color: var(--white); }
+  .price-note { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); margin-top: 4px; text-align: center; }
+  .table-header { display: grid; grid-template-columns: 280px 1fr 120px; margin-bottom: 4px; }
+  .table-header div { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; padding: 12px 16px; border-bottom: 2px solid var(--accent-dim); background: var(--panel); }
+  .footer { display: flex; justify-content: space-between; font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 2px; padding: 20px 0; margin-top: 30px; border-top: 1px solid var(--border); }
+  @media (max-width: 800px) { .product-card { grid-template-columns: 1fr; } .product-img-cell { border-right: none; border-bottom: 1px solid var(--border); } .product-price-cell { border-left: none; border-top: 1px solid var(--border); flex-direction: row; gap: 8px; } .table-header { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <div class="header-logo">Weyland-Yutani Corp ◦ Supply Division</div>
+      <div class="header-status"><span class="dot"></span> REQUISITION ACTIVE</div>
+    </div>
+    <h1>Galley Supply Requisition</h1>
+    <div class="header-sub">IKEA Accessories — Nostromo / Sevastopol Aesthetic Match ◦ REQ-2183-NK</div>
+  </div>
+  <div class="table-header"><div>Product Image</div><div>Product / Match Analysis</div><div>Price</div></div>
+
+  <!-- TRONES -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/trones-shoe-storage-cabinet-white__0710711_pe727734_s5.jpg" alt="TRONES">
+    </div>
+    <div class="product-info">
+      <div class="product-name">TRONES</div>
+      <div class="product-type">Shoe/Storage Cabinet ◦ White Polypropylene ◦ 20½×7⅛×15⅜"</div>
+      <div class="product-desc">Wall-mounted flip-up white plastic panels. Stack vertically or tile horizontally to create modular wall storage grids. The single most Nostromo-accurate item in the IKEA catalog.</div>
+      <div class="nostromo-match">Maps to: Flanking corridor storage panels (both sides of galley). Repeating white compartment grid visible in Alien: Isolation concept art.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/trones-shoe-storage-cabinet-white-00397307/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$39.99</div>
+      <div class="price-note">/2-pack</div>
+    </div>
+  </div>
+
+  <!-- KUGGIS -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/kuggis-box-with-lid-white__0713072_pe729176_s5.jpg" alt="KUGGIS">
+    </div>
+    <div class="product-info">
+      <div class="product-name">KUGGIS</div>
+      <div class="product-type">Stackable Storage Box w/ Lid ◦ White PET Plastic ◦ 10¼×13¾×6"</div>
+      <div class="product-desc">Chunky white stackable boxes with rounded corners and snap-on lids. Mix sizes for authentic modular look. Multiple sizes available from 5×7" to 14½×21¼".</div>
+      <div class="nostromo-match">Maps to: Upper shelf ration containers and storage compartments visible across the top of the galley. Stack mixed sizes for the white-dominant modular look.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/kuggis-box-with-lid-white-s59561188/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$14.99</div>
+      <div class="price-note">10¼×13¾" size</div>
+    </div>
+  </div>
+
+  <!-- SKADIS -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/skadis-pegboard-white__0710685_pe727711_s5.jpg" alt="SKÅDIS">
+    </div>
+    <div class="product-info">
+      <div class="product-name">SKÅDIS</div>
+      <div class="product-type">Pegboard + Accessories System ◦ White ◦ 14¼×22"</div>
+      <div class="product-desc">White pegboard with snap-in metal containers, hooks, shelves, and cup holders. The modular grid-of-holes pattern reads as pure space station equipment rack. Add white containers for maximum effect.</div>
+      <div class="nostromo-match">Maps to: Equipment rack panels flanking the galley center. The grid pattern with attached containers matches the Isolation concept art. Cup holders echo the mug rail.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/skadis-pegboard-white-50320805/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$19.99</div>
+      <div class="price-note">board only</div>
+    </div>
+  </div>
+
+  <!-- VARDERA -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/vaerdera-mug-white__51249_pe150726_s5.jpg" alt="VÄRDERA">
+    </div>
+    <div class="product-info">
+      <div class="product-name">VÄRDERA</div>
+      <div class="product-type">Mug ◦ White Feldspar Porcelain ◦ 10 oz</div>
+      <div class="product-desc">Simple, slightly angular white porcelain mugs with an institutional, squared-off feel. Buy 6–8 and hang or display on a rail for the crew mess look. IKEA 365+ mugs also work as alternates.</div>
+      <div class="nostromo-match">Maps to: Row of white mugs on the shelf rail in the center of the galley. The simple utilitarian shape is a direct match for production-used props.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/vaerdera-mug-white-10277366/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$4.99</div>
+      <div class="price-note">each</div>
+    </div>
+  </div>
+
+  <!-- UPPDATERA -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/uppdatera-box-white__1215013_pe911811_s5.jpg" alt="UPPDATERA">
+    </div>
+    <div class="product-info">
+      <div class="product-name">UPPDATERA</div>
+      <div class="product-type">Organizer Box ◦ White Matte PP ◦ 13¼×9½"</div>
+      <div class="product-desc">Matte white open-top boxes with grip handles. Reads as "galley drawer insert" — the kind of container you'd slide out of a compartment. Good for grouping smaller items on open shelving.</div>
+      <div class="nostromo-match">Maps to: The white open trays and containers visible on the lower galley counter / work surface. Functional food service aesthetic.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/uppdatera-box-white-40546471/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$4.99</div>
+      <div class="price-note">each</div>
+    </div>
+  </div>
+
+  <!-- SORTERA -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/sortera-recycling-bin-with-lid-white__0711172_pe728041_s5.jpg" alt="SORTERA">
+    </div>
+    <div class="product-info">
+      <div class="product-name">SORTERA</div>
+      <div class="product-type">Recycling Bin w/ Lid ◦ White ◦ 10 gallon</div>
+      <div class="product-desc">Chunky white stackable bins with a hinged front flap. Stack 2–3 high and they read as modular cargo storage or supply crates. Unmistakably utilitarian-space proportions.</div>
+      <div class="nostromo-match">Maps to: Lower galley storage / supply bins. Could stand in for the larger pantry containers visible through the galley center opening.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/sortera-recycling-bin-with-lid-white-10255897/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$14.99</div>
+      <div class="price-note">10 gal</div>
+    </div>
+  </div>
+
+  <!-- TROFAST -->
+  <div class="product-card">
+    <div class="product-img-cell">
+      <img src="https://www.ikea.com/us/en/images/products/trofast-storage-box-white__1320538_pe941270_s5.jpg" alt="TROFAST">
+    </div>
+    <div class="product-info">
+      <div class="product-name">TROFAST</div>
+      <div class="product-type">Storage Box ◦ White PP ◦ 16½×11¾×4"</div>
+      <div class="product-desc">Shallow white plastic bins. The tray-like proportions are a dead ringer for the food service trays visible on the Nostromo galley shelves. Use on open shelving.</div>
+      <div class="nostromo-match">Maps to: Top shelf food trays — the white rectangular dishes holding rations. Also works as compartment bins on the Isolation-style layout.</div>
+      <div class="match-rating"><div class="mb a"></div><div class="mb a"></div><div class="mb a"></div><div class="mb"></div><div class="mb"></div></div>
+      <a class="product-link" href="https://www.ikea.com/us/en/p/trofast-storage-box-white-50582072/" target="_blank">View on IKEA →</a>
+    </div>
+    <div class="product-price-cell">
+      <div class="product-price">$4.00</div>
+      <div class="price-note">each</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>WEYLAND-YUTANI CORP ◦ SUPPLY DIVISION ◦ GATEWAY STATION</span>
+    <span>REQ-2183-NK ◦ PRIORITY: STANDARD ◦ 2183.02.12</span>
+  </div>
+</div>
+</body>
+</html>
