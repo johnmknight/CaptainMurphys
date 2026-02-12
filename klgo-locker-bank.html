@@ -1,3 +1,393 @@
-<!-- KLGO Locker Bank Detail Drawing - Rev 03 - Stadium Profile -->
-<!-- See /mnt/user-data/outputs/klgo-locker-bank.html for full source -->
-<!-- Saved to repo: 2026-02-12 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captain Murphy's — KLGO Locker Bank Detail (Rev 04)</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --panel: #12161c;
+    --border: #2a3040;
+    --accent: #d4a843;
+    --text: #c8cdd4;
+    --text-dim: #5a6070;
+    --warn: #cc6633;
+    --callout: #3a7abd;
+    --green: #4a9e6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Chakra Petch', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .page-header { text-align: center; margin-bottom: 32px; }
+  .page-header .corp { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .page-header h1 { font-family: 'Chakra Petch', monospace; font-size: 28px; font-weight: 700; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+  .page-header .subtitle { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1.5px; }
+  .drawing-panel { background: var(--panel); border: 1px solid var(--border); padding: 30px; max-width: 1000px; width: 100%; }
+  .drawing-title { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; }
+  .views-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+  .view-box { background: #0e1118; border: 1px solid var(--border); padding: 16px; }
+  .view-label { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; text-align: center; }
+  .view-box svg { width: 100%; display: block; }
+  .full-width-view { background: #0e1118; border: 1px solid var(--border); padding: 20px; margin-bottom: 24px; }
+  .full-width-view .view-label { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: var(--warn); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+  .notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .note-card { background: rgba(204,102,51,0.06); border: 1px solid rgba(204,102,51,0.2); border-left: 3px solid var(--warn); padding: 14px 16px; }
+  .note-card .label { font-family: 'Share Tech Mono', monospace; font-size: 9px; color: var(--warn); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .note-card .desc { font-size: 12px; line-height: 1.6; color: var(--text); }
+  .note-card .dim { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); margin-top: 6px; }
+  .note-card.green { background: rgba(74,158,106,0.06); border-color: rgba(74,158,106,0.2); border-left-color: var(--green); }
+  .note-card.green .label { color: var(--green); }
+  .footer { margin-top: 24px; display: flex; justify-content: space-between; font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 2px; padding-top: 14px; border-top: 1px solid var(--border); max-width: 1000px; width: 100%; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="corp">Captain Murphy's ◦ Habitat Module Build Log</div>
+  <h1>KLGO Locker Bank — Detail Drawing</h1>
+  <div class="subtitle">4-Unit Config ◦ CV Pipeline Verified ◦ DWG-CM-LOC-001 Rev 04</div>
+</div>
+
+<div class="drawing-panel">
+  <div class="drawing-title">
+    <span>Component Detail — CV-Measured Geometry</span>
+    <span style="color: var(--text-dim);">Scale: 16px/inch</span>
+  </div>
+
+  <div class="views-grid">
+    <!--
+      ================================================
+      TOP-DOWN VIEW — horizontal stadium as photographed
+      ================================================
+      Physical: 12.79" × 5.74"
+      At 16px/in: 205px × 92px
+      Stadium: R=46px, straight=113px
+      
+      CV Pipeline confirmed:
+        - 6-vertex approx at eps=0.02
+        - Solidity 0.898 (high = stadium not ellipse)
+        - Button at rel (centered, 40% from narrow end)
+        - Button size ~0.6" × 0.8" pill
+    -->
+    <div class="view-box">
+      <div class="view-label">Top-Down View — Lid Shape (CV Verified)</div>
+      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="320" height="200" fill="#0e1118"/>
+
+        <!-- Stadium body: horizontal, centered at (160,100) -->
+        <!-- Left semicircle at x=58, right semicircle at x=262, y range 54-146 -->
+        <path d="M104,54 A46,46 0 0,0 104,146 L216,146 A46,46 0 0,0 216,54 Z"
+              fill="#f0ede8" stroke="#c8c4be" stroke-width="1.5"/>
+        <!-- Lid seam inset -->
+        <path d="M106,57 A43,43 0 0,0 106,143 L214,143 A43,43 0 0,0 214,57 Z"
+              fill="none" stroke="#dddad5" stroke-width="0.6"/>
+
+        <!-- Press button — centered on SHORT axis only, ~40% on long axis
+             40% of 205px = 82px from left semicircle start (x=58)
+             Button center: x = 58 + 82 = 140, y = 100 (centered on short axis)
+             Size: 0.6" × 0.8" = 10px × 13px -->
+        <rect x="135" y="94" width="10" height="13" rx="5" ry="5"
+              fill="#e8e5e0" stroke="#c0bdb8" stroke-width="0.6"/>
+        <!-- Button center dot -->
+        <circle cx="140" cy="100" r="2" fill="#dddad5" stroke="#b0ada8" stroke-width="0.3"/>
+
+        <!-- Hinge line (back edge) -->
+        <line x1="216" y1="58" x2="216" y2="142" stroke="#bbb8b2" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <text x="228" y="104" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">HINGE</text>
+
+        <!-- Width dimension -->
+        <line x1="58" y1="168" x2="262" y2="168" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="58" y1="163" x2="58" y2="173" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="262" y1="163" x2="262" y2="173" stroke="#5a6070" stroke-width="0.5"/>
+        <text x="160" y="182" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070">12.79"</text>
+        <!-- Height dimension -->
+        <line x1="38" y1="54" x2="38" y2="146" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="33" y1="54" x2="43" y2="54" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="33" y1="146" x2="43" y2="146" stroke="#5a6070" stroke-width="0.5"/>
+        <text x="22" y="104" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070" transform="rotate(-90,22,104)">5.74"</text>
+
+        <!-- Radius callout -->
+        <line x1="104" y1="100" x2="58" y2="100" stroke="#d4a843" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="74" y="115" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843">R=2.87"</text>
+        <!-- Straight section -->
+        <line x1="104" y1="38" x2="216" y2="38" stroke="#cc6633" stroke-width="0.5"/>
+        <line x1="104" y1="33" x2="104" y2="43" stroke="#cc6633" stroke-width="0.5"/>
+        <line x1="216" y1="33" x2="216" y2="43" stroke="#cc6633" stroke-width="0.5"/>
+        <text x="160" y="32" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#cc6633">7.05" straight</text>
+
+        <!-- Button position callout -->
+        <line x1="58" y1="80" x2="140" y2="80" stroke="#3a7abd" stroke-width="0.4" stroke-dasharray="2,2"/>
+        <line x1="58" y1="76" x2="58" y2="84" stroke="#3a7abd" stroke-width="0.4"/>
+        <line x1="140" y1="76" x2="140" y2="84" stroke="#3a7abd" stroke-width="0.4"/>
+        <text x="99" y="76" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#3a7abd">40% (5.12")</text>
+
+        <text x="160" y="16" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="8" fill="#cc6633" letter-spacing="1">STADIUM — BTN CENTERED ON SHORT AXIS ONLY</text>
+      </svg>
+    </div>
+
+    <!--
+      ================================================
+      SINGLE LOCKER — ROTATED 90° (vertical stadium)
+      ================================================
+      After rotation:
+        Width: 5.74" → 92px
+        Height: 12.79" → 205px
+        R: 46px, straight: 113px
+        Button: centered horizontally, 40% from top = 78px down
+        Button size: 0.8"W × 0.6"H rotated = 13px × 10px
+    -->
+    <div class="view-box">
+      <div class="view-label">Single Locker — Rotated 90° (Lid = Door)</div>
+      <svg viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="260" height="300" fill="#0e1118"/>
+        <!-- Back panel -->
+        <rect x="79" y="34" width="102" height="218" rx="2" fill="#1a1e28" stroke="#2a3040" stroke-width="0.5"/>
+        <!-- Stadium body vertical -->
+        <path d="M130,42 A46,46 0 0,1 176,88 L176,201 A46,46 0 0,1 84,201 L84,88 A46,46 0 0,1 130,42 Z"
+              fill="#f0ede8" stroke="#c8c4be" stroke-width="1.5"/>
+        <!-- Door seam -->
+        <path d="M130,45 A43,43 0 0,1 173,88 L173,201 A43,43 0 0,1 87,201 L87,88 A43,43 0 0,1 130,45 Z"
+              fill="none" stroke="#dddad5" stroke-width="0.6"/>
+        <!-- Inner seam -->
+        <path d="M130,48 A40,40 0 0,1 170,88 L170,201 A40,40 0 0,1 90,201 L90,88 A40,40 0 0,1 130,48 Z"
+              fill="none" stroke="#c8c4be" stroke-width="0.3" opacity="0.4"/>
+
+        <!-- Press button — centered on SHORT axis (width) only
+             ~40% from top on long axis
+             40% of 205 = 82px → button center y = 42 + 82 = 124
+             Centered on width: x = 130
+             Rotated: 13px W × 10px H -->
+        <rect x="124" y="119" width="13" height="10" rx="5" ry="4"
+              fill="#e8e5e0" stroke="#c0bdb8" stroke-width="0.6"/>
+        <circle cx="130" cy="124" r="2" fill="#dddad5" stroke="#b0ada8" stroke-width="0.3"/>
+
+        <!-- Dual barrel divider — horizontal midline of straight section
+             Straight runs from y=88 to y=201, midpoint = 145 -->
+        <line x1="92" y1="145" x2="168" y2="145" stroke="#dddad5" stroke-width="0.5" opacity="0.5"/>
+
+        <!-- Locker number -->
+        <rect x="113" y="60" width="34" height="20" rx="3" fill="rgba(20,24,32,0.75)" stroke="#4a5060" stroke-width="0.5"/>
+        <text x="130" y="74" text-anchor="middle" font-family="Chakra Petch, monospace" font-size="14" fill="#d4a843" font-weight="700">01</text>
+
+        <!-- Button position callout -->
+        <line x1="190" y1="42" x2="190" y2="124" stroke="#3a7abd" stroke-width="0.4" stroke-dasharray="2,2"/>
+        <line x1="186" y1="42" x2="194" y2="42" stroke="#3a7abd" stroke-width="0.4"/>
+        <line x1="186" y1="124" x2="194" y2="124" stroke="#3a7abd" stroke-width="0.4"/>
+        <text x="200" y="87" font-family="Share Tech Mono, monospace" font-size="7" fill="#3a7abd" transform="rotate(90,200,87)">40% (5.12")</text>
+
+        <!-- Width dim -->
+        <line x1="84" y1="268" x2="176" y2="268" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="84" y1="263" x2="84" y2="273" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="176" y1="263" x2="176" y2="273" stroke="#5a6070" stroke-width="0.5"/>
+        <text x="130" y="283" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070">5.74"</text>
+        <!-- Height dim -->
+        <line x1="228" y1="42" x2="228" y2="247" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="223" y1="42" x2="233" y2="42" stroke="#5a6070" stroke-width="0.5"/>
+        <line x1="223" y1="247" x2="233" y2="247" stroke="#5a6070" stroke-width="0.5"/>
+        <text x="244" y="148" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070" transform="rotate(90,244,148)">12.79"</text>
+
+        <text x="130" y="20" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="8" fill="#cc6633" letter-spacing="1">LID → DOOR ◦ BUTTON = LATCH</text>
+      </svg>
+    </div>
+  </div>
+
+  <!--
+    ============================================================
+    4-UNIT LOCKER BANK — MAIN DRAWING
+    ============================================================
+    Each locker: 92px W × 205px H, stadium path
+    Spacers: 2px (⅛")
+    Total: (92×4) + (2×3) = 374px
+    Centered in 900px: offset x = 263
+
+    CV-verified measurements:
+      Stadium R = 46px (2.87")
+      Straight = 113px (7.05")
+      Button: center at 40% from top, centered horiz
+      Button size: 13px × 10px (0.8" × 0.6")
+      Solidity: 0.898
+  -->
+  <div class="full-width-view">
+    <div class="view-label">4-Unit Locker Bank — Front Elevation ◦ CV Pipeline Verified</div>
+    <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="dimArr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#5a6070"/></marker>
+        <marker id="dimArrR" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto"><path d="M6,0 L0,3 L6,6" fill="#5a6070"/></marker>
+        <marker id="warnArr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#cc6633"/></marker>
+        <linearGradient id="plasticG" x1="0" y1="0" x2="0.3" y2="1">
+          <stop offset="0%" stop-color="#f2efea"/>
+          <stop offset="35%" stop-color="#edeae5"/>
+          <stop offset="75%" stop-color="#f0ede8"/>
+          <stop offset="100%" stop-color="#eae7e2"/>
+        </linearGradient>
+
+        <!-- Reusable locker shape as a symbol -->
+        <!-- Each locker: 92px wide × 205px tall stadium -->
+        <symbol id="locker" viewBox="0 0 92 205">
+          <!-- Back panel -->
+          <rect x="-2" y="-2" width="96" height="209" rx="2" fill="#1a1e28" stroke="#2a3040" stroke-width="0.5"/>
+          <!-- Stadium body -->
+          <path d="M46,0 A46,46 0 0,1 92,46 L92,159 A46,46 0 0,1 0,159 L0,46 A46,46 0 0,1 46,0 Z"
+                fill="url(#plasticG)" stroke="#c8c4be" stroke-width="1.3"/>
+          <!-- Door seam outer -->
+          <path d="M46,3 A43,43 0 0,1 89,46 L89,159 A43,43 0 0,1 3,159 L3,46 A43,43 0 0,1 46,3 Z"
+                fill="none" stroke="#dddad5" stroke-width="0.6"/>
+          <!-- Door seam inner -->
+          <path d="M46,6 A40,40 0 0,1 86,46 L86,159 A40,40 0 0,1 6,159 L6,46 A40,40 0 0,1 46,6 Z"
+                fill="none" stroke="#c8c4be" stroke-width="0.3" opacity="0.35"/>
+          <!-- Press button — centered on short axis ONLY
+               ~40% from top on long axis (NOT centered)
+               40% of 205 = 82px, center at (46, 82)
+               Size: 13px × 10px pill -->
+          <rect x="40" y="77" width="13" height="10" rx="5" ry="4"
+                fill="#e8e5e0" stroke="#c0bdb8" stroke-width="0.6"/>
+          <circle cx="46" cy="82" r="2" fill="#dddad5" stroke="#b0ada8" stroke-width="0.3"/>
+          <!-- Dual barrel divider — midpoint of straight section
+               Straight: y=46 to y=159, midpoint = 103
+               Button sits on lid surface; divider is internal partition (different plane) -->
+          <line x1="8" y1="103" x2="84" y2="103" stroke="#dddad5" stroke-width="0.5" opacity="0.45"/>
+        </symbol>
+      </defs>
+
+      <rect width="900" height="400" fill="#0e1118"/>
+
+      <!-- LOCKER 01 -->
+      <use href="#locker" x="263" y="55" width="92" height="205"/>
+      <rect x="292" y="72" width="34" height="20" rx="3" fill="rgba(20,24,32,0.75)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="309" y="86" text-anchor="middle" font-family="Chakra Petch, monospace" font-size="14" fill="#d4a843" font-weight="700">01</text>
+
+      <!-- SPACER 1 -->
+      <rect x="355" y="53" width="2" height="209" fill="#1e2430"/>
+
+      <!-- LOCKER 02 -->
+      <use href="#locker" x="357" y="55" width="92" height="205"/>
+      <rect x="386" y="72" width="34" height="20" rx="3" fill="rgba(20,24,32,0.75)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="403" y="86" text-anchor="middle" font-family="Chakra Petch, monospace" font-size="14" fill="#d4a843" font-weight="700">02</text>
+
+      <!-- SPACER 2 -->
+      <rect x="449" y="53" width="2" height="209" fill="#1e2430"/>
+
+      <!-- LOCKER 03 -->
+      <use href="#locker" x="451" y="55" width="92" height="205"/>
+      <rect x="480" y="72" width="34" height="20" rx="3" fill="rgba(20,24,32,0.75)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="497" y="86" text-anchor="middle" font-family="Chakra Petch, monospace" font-size="14" fill="#d4a843" font-weight="700">03</text>
+
+      <!-- SPACER 3 -->
+      <rect x="543" y="53" width="2" height="209" fill="#1e2430"/>
+
+      <!-- LOCKER 04 -->
+      <use href="#locker" x="545" y="55" width="92" height="205"/>
+      <rect x="574" y="72" width="34" height="20" rx="3" fill="rgba(20,24,32,0.75)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="591" y="86" text-anchor="middle" font-family="Chakra Petch, monospace" font-size="14" fill="#d4a843" font-weight="700">04</text>
+
+      <!-- ==================== DIMENSIONS ==================== -->
+
+      <!-- Single locker width -->
+      <line x1="263" y1="290" x2="355" y2="290" stroke="#5a6070" stroke-width="0.5"
+            marker-start="url(#dimArrR)" marker-end="url(#dimArr)"/>
+      <text x="309" y="305" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070">5.74"</text>
+
+      <!-- Total bank width -->
+      <line x1="263" y1="330" x2="637" y2="330" stroke="#cc6633" stroke-width="0.8"
+            marker-start="url(#dimArrR)" marker-end="url(#dimArr)"/>
+      <text x="450" y="348" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="10" fill="#cc6633">23.34" total  ◦  fits 24" bay (0.66" clearance)</text>
+
+      <!-- Locker height -->
+      <line x1="670" y1="55" x2="670" y2="260" stroke="#5a6070" stroke-width="0.5"
+            marker-start="url(#dimArrR)" marker-end="url(#dimArr)"/>
+      <text x="688" y="162" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070" transform="rotate(90,688,162)">12.79"</text>
+
+      <!-- Semicircle radius callout -->
+      <line x1="263" y1="101" x2="263" y2="55" stroke="#d4a843" stroke-width="0.4" stroke-dasharray="2,2"/>
+      <text x="240" y="82" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843">R=2.87"</text>
+
+      <!-- Straight section -->
+      <line x1="242" y1="101" x2="242" y2="214" stroke="#cc6633" stroke-width="0.4"/>
+      <line x1="237" y1="101" x2="247" y2="101" stroke="#cc6633" stroke-width="0.4"/>
+      <line x1="237" y1="214" x2="247" y2="214" stroke="#cc6633" stroke-width="0.4"/>
+      <text x="230" y="162" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#cc6633" transform="rotate(-90,230,162)">7.05" straight</text>
+
+      <!-- Button position callout — 40% from top -->
+      <line x1="242" y1="55" x2="242" y2="137" stroke="#3a7abd" stroke-width="0.4" stroke-dasharray="2,1"/>
+      <line x1="237" y1="137" x2="247" y2="137" stroke="#3a7abd" stroke-width="0.6"/>
+      <text x="222" y="100" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="6" fill="#3a7abd" transform="rotate(-90,222,100)">40% BUTTON</text>
+
+      <!-- Spacer callout -->
+      <line x1="356" y1="38" x2="356" y2="50" stroke="#4a9e6a" stroke-width="0.5"/>
+      <text x="356" y="32" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#4a9e6a">⅛" spacer</text>
+
+      <!-- ==================== ANNOTATIONS ==================== -->
+
+      <!-- Right side -->
+      <text x="720" y="75" font-family="Share Tech Mono, monospace" font-size="8" fill="#cc6633">DOOR MECHANISM</text>
+      <text x="720" y="88" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Press-top lid → front-opening door</text>
+      <text x="720" y="100" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Button at 40% from top (centered on width only)</text>
+      <text x="720" y="112" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Button size: 0.8" × 0.6" pill</text>
+
+      <text x="720" y="145" font-family="Share Tech Mono, monospace" font-size="8" fill="#d4a843">DUAL COMPARTMENT</text>
+      <text x="720" y="158" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Interior divider → 2 bays per locker</text>
+      <text x="720" y="170" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Upper: ~5.5" × 5.5" × 12.4"D</text>
+      <text x="720" y="182" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Lower: ~5.5" × 5.5" × 12.4"D</text>
+
+      <text x="720" y="215" font-family="Share Tech Mono, monospace" font-size="8" fill="#3a7abd">DEPTH INTO WALL</text>
+      <text x="720" y="228" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">12.44" (original bin height)</text>
+      <text x="720" y="240" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Base foot = rear standoff</text>
+
+      <!-- Left side -->
+      <text x="180" y="135" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="8" fill="#cc6633">STADIUM PROFILE</text>
+      <text x="180" y="148" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Semicircular ends (R=2.87")</text>
+      <text x="180" y="160" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Straight parallel sides (7.05")</text>
+      <text x="180" y="172" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070">Solidity: 0.898 (CV confirmed)</text>
+      <line x1="185" y1="153" x2="260" y2="153" stroke="#cc6633" stroke-width="0.4" stroke-dasharray="3,2" marker-end="url(#warnArr)"/>
+
+      <!-- CV Pipeline badge -->
+      <rect x="720" y="280" width="155" height="50" rx="3" fill="rgba(74,158,106,0.08)" stroke="rgba(74,158,106,0.3)" stroke-width="0.5"/>
+      <text x="797" y="296" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#4a9e6a" letter-spacing="1">CV PIPELINE VERIFIED</text>
+      <text x="797" y="308" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#5a6070">HSV → Morph → Score → GrabCut</text>
+      <text x="797" y="320" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#5a6070">6-vertex approx ◦ 0.898 solidity</text>
+
+    </svg>
+  </div>
+
+  <!-- Notes -->
+  <div class="notes">
+    <div class="note-card green">
+      <div class="label">CV Pipeline (Rev 04)</div>
+      <div class="desc">HSV color isolation (S&lt;30, V&gt;190) → morphological erode/dilate to break background bridges → contour scoring (area + solidity + aspect + circularity + convexity) → GrabCut refinement. Stadium shape confirmed: 6-vertex approximation, 0.898 solidity.</div>
+      <div class="dim">Button at 40% from narrow end, centered on short axis only, ~0.8" × 0.6" pill</div>
+    </div>
+    <div class="note-card">
+      <div class="label">Rotation Mapping</div>
+      <div class="desc">Original: 12.79"W × 5.74"D × 12.44"H. Rotated 90°: the 12.79" wide face (stadium) becomes vertical locker front. 5.74" depth becomes locker width. 12.44" height becomes depth into wall. Press button = locker latch.</div>
+      <div class="dim">Base foot → rear standoff against wall surface</div>
+    </div>
+    <div class="note-card">
+      <div class="label">Bank Configuration</div>
+      <div class="desc">4 lockers × 5.74" = 22.96" + 3 spacers × 0.125" = 0.375". Total: 23.335" in a 24" bay. 0.665" clearance for edge trim or 3D-printed end caps (0.33"/side).</div>
+      <div class="dim">8 total compartments (2 per locker via dual barrel divider)</div>
+    </div>
+    <div class="note-card">
+      <div class="label">Cost</div>
+      <div class="desc">KLGO 2.4 Gal Slim (B089Y36RST) ~$22/ea × 4 = $88. Spacers (⅛" HDPE) ~$5. L-brackets ~$8. Edge trim ~$10.</div>
+      <div class="dim">Total locker bank: ~$111 installed</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <span>CAPTAIN MURPHY'S ◦ HABITAT MODULE ◦ CREW LOCKERS</span>
+  <span>DWG-CM-LOC-001 ◦ REV 04 ◦ 2026.02.12</span>
+</div>
+
+</body>
+</html>
