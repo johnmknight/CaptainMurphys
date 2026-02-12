@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captain Murphy's — Coffee Bar Billy Bookcase Elevation</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c10;
+    --panel: #12161c;
+    --border: #2a3040;
+    --accent: #d4a843;
+    --accent-dim: #8a6e2a;
+    --text: #c8cdd4;
+    --text-dim: #5a6070;
+    --white: #e8ecf0;
+    --dim-line: #1e2430;
+    --callout: #3a7abd;
+    --callout-dim: rgba(58,122,189,0.15);
+    --warn: #cc6633;
+    --green: #4a9e6a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Chakra Petch', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 900px;
+  }
+  .page-header .corp {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .page-header h1 {
+    font-family: 'Chakra Petch', monospace;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .page-header .subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+  }
+
+  .elevation-container {
+    position: relative;
+    width: 700px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 30px;
+  }
+
+  .elevation-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .svg-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .svg-wrap svg {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .callouts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .callout-box {
+    background: rgba(20,24,32,0.6);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 3px;
+  }
+  .callout-box .label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .callout-box .detail {
+    font-family: 'Chakra Petch', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .rev-tag {
+    display: inline-block;
+    background: var(--warn);
+    color: #fff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    margin-left: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="corp">Weyland-Yutani Corp • Crew Amenities Division</div>
+  <h1>Captain Murphy's</h1>
+  <div class="subtitle">COFFEE BAR — BILLY BOOKCASE ELEVATION <span class="rev-tag">REV 05</span></div>
+  <div class="subtitle" style="margin-top:4px; color:#5a6070;">IKEA BILLY (No Shelves) — 36″W × 84″H • KLGO Stadium Profile Lockers</div>
+</div>
+
+<div class="elevation-container">
+  <div class="elevation-title">
+    <span>Front Elevation — Billy Bookcase Unit</span>
+    <span>Scale: 8px = 1″</span>
+  </div>
+
+  <div class="svg-wrap">
+    <!-- ============================================
+         BILLY BOOKCASE: 36"W × 84"H
+         Scale: 8px/inch
+         Width:  36 × 8 = 288px
+         Height: 84 × 8 = 672px
+
+         SVG canvas: 640w × 800h
+         Billy centered: x=176 to x=464 (288px)
+         Billy top: y=50, bottom: y=722 (672px)
+
+         Interior (0.75" panels = 6px):
+         x=182 to x=458 (276px = 34.5" usable)
+         y=56 to y=716 (660px = 82.5" usable)
+
+         ZONES (top to bottom):
+         A: Top shelf — mugs/KUGGIS           y=56 to y=116  (60px = 7.5")
+         B: SKÅDIS Pegboard                   y=120 to y=276 (156px = 19.5")
+         C: Counter shelf                     y=276 to y=286 (10px = 1.25")
+         D: Coffee maker shelf                y=290 to y=386 (96px = 12")
+         E: KLGO Locker bank                  y=390 to y=502 (112px = 14")
+         F: Open storage / waste              y=506 to y=716 (210px = 26.25")
+         ============================================ -->
+
+    <svg viewBox="0 0 640 820" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" patternUnits="userSpaceOnUse" width="8" height="8">
+          <rect width="8" height="8" fill="none"/>
+          <rect width="8" height="8" fill="none" stroke="#151a22" stroke-width="0.3"/>
+        </pattern>
+      </defs>
+
+      <!-- Background -->
+      <rect width="640" height="820" fill="#0e1118"/>
+      <rect width="640" height="820" fill="url(#grid)"/>
+
+      <!-- =============================================
+           BILLY BOOKCASE — Outer Shell
+           36"W × 84"H = 288px × 672px
+           Side panels: 0.75" = 6px
+           ============================================= -->
+
+      <!-- Top cap -->
+      <rect x="170" y="44" width="300" height="6" fill="#2a2520" stroke="#4a4035" stroke-width="1"/>
+
+      <!-- Left side panel -->
+      <rect x="170" y="50" width="6" height="672" fill="#3a3530" stroke="#4a4035" stroke-width="0.8"/>
+
+      <!-- Right side panel -->
+      <rect x="464" y="50" width="6" height="672" fill="#3a3530" stroke="#4a4035" stroke-width="0.8"/>
+
+      <!-- Back panel (visible through interior) -->
+      <rect x="176" y="50" width="288" height="672" fill="#1a1c20" stroke="none"/>
+
+      <!-- Interior space -->
+      <rect x="182" y="56" width="276" height="660" fill="#14161a" stroke="none"/>
+
+      <!-- Bottom panel / base -->
+      <rect x="170" y="722" width="300" height="8" fill="#3a3530" stroke="#4a4035" stroke-width="0.8"/>
+
+      <!-- Bookcase label -->
+      <text x="320" y="38" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070" letter-spacing="3">IKEA BILLY — 36″W × 84″H — NO SHELVES</text>
+
+
+      <!-- =============================================
+           ZONE A: TOP SHELF — MUGS + KUGGIS
+           y=56 to y=116 (7.5")
+           ============================================= -->
+
+      <text x="188" y="68" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843" letter-spacing="1.5">A · UPPER SHELF</text>
+
+      <!-- Shelf bracket -->
+      <rect x="182" y="110" width="276" height="6" fill="#2a2520" stroke="#4a4035" stroke-width="0.8"/>
+
+      <!-- KUGGIS box 1 -->
+      <rect x="190" y="72" width="52" height="36" rx="2" fill="#e8e8e8" stroke="#ccc" stroke-width="0.8"/>
+      <rect x="193" y="74" width="46" height="4" rx="1" fill="#ddd" stroke="#bbb" stroke-width="0.4"/>
+      <text x="216" y="96" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#888">KUGGIS</text>
+
+      <!-- KUGGIS box 2 -->
+      <rect x="248" y="72" width="52" height="36" rx="2" fill="#e8e8e8" stroke="#ccc" stroke-width="0.8"/>
+      <rect x="251" y="74" width="46" height="4" rx="1" fill="#ddd" stroke="#bbb" stroke-width="0.4"/>
+      <text x="274" y="96" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#888">KUGGIS</text>
+
+      <!-- Mugs -->
+      <g transform="translate(316, 78)">
+        <g>
+          <path d="M0,22 L0,5 Q0,0 4,0 L14,0 Q18,0 18,5 L18,22 Q18,24 16,24 L2,24 Q0,24 0,22 Z" fill="#f0f0f0" stroke="#ccc" stroke-width="0.6"/>
+          <path d="M18,6 Q24,6 24,13 Q24,18 18,18" fill="none" stroke="#ccc" stroke-width="0.6"/>
+        </g>
+        <g transform="translate(26,0)">
+          <path d="M0,22 L0,5 Q0,0 4,0 L14,0 Q18,0 18,5 L18,22 Q18,24 16,24 L2,24 Q0,24 0,22 Z" fill="#f0f0f0" stroke="#ccc" stroke-width="0.6"/>
+          <path d="M18,6 Q24,6 24,13 Q24,18 18,18" fill="none" stroke="#ccc" stroke-width="0.6"/>
+        </g>
+        <g transform="translate(52,0)">
+          <path d="M0,22 L0,5 Q0,0 4,0 L14,0 Q18,0 18,5 L18,22 Q18,24 16,24 L2,24 Q0,24 0,22 Z" fill="#f0f0f0" stroke="#ccc" stroke-width="0.6"/>
+          <path d="M18,6 Q24,6 24,13 Q24,18 18,18" fill="none" stroke="#ccc" stroke-width="0.6"/>
+        </g>
+        <g transform="translate(78,0)">
+          <path d="M0,22 L0,5 Q0,0 4,0 L14,0 Q18,0 18,5 L18,22 Q18,24 16,24 L2,24 Q0,24 0,22 Z" fill="#f0f0f0" stroke="#ccc" stroke-width="0.6"/>
+          <path d="M18,6 Q24,6 24,13 Q24,18 18,18" fill="none" stroke="#ccc" stroke-width="0.6"/>
+        </g>
+      </g>
+      <text x="388" y="108" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#888">VÄRDERA ×4</text>
+
+
+      <!-- =============================================
+           ZONE B: SKÅDIS PEGBOARD
+           y=120 to y=276 (19.5")
+           ============================================= -->
+
+      <text x="188" y="132" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843" letter-spacing="1.5">B · SKÅDIS PEGBOARD</text>
+
+      <!-- Pegboard panel -->
+      <rect x="190" y="138" width="260" height="130" fill="#e8e8e4" opacity="0.06" stroke="#3a4050" stroke-width="0.8"/>
+
+      <!-- Peg holes pattern -->
+      <g fill="none" stroke="#2a3040" stroke-width="0.3" opacity="0.5">
+        <circle cx="206" cy="154" r="1.5"/><circle cx="222" cy="154" r="1.5"/><circle cx="238" cy="154" r="1.5"/>
+        <circle cx="254" cy="154" r="1.5"/><circle cx="270" cy="154" r="1.5"/><circle cx="286" cy="154" r="1.5"/>
+        <circle cx="302" cy="154" r="1.5"/><circle cx="318" cy="154" r="1.5"/><circle cx="334" cy="154" r="1.5"/>
+        <circle cx="350" cy="154" r="1.5"/><circle cx="366" cy="154" r="1.5"/><circle cx="382" cy="154" r="1.5"/>
+        <circle cx="206" cy="170" r="1.5"/><circle cx="222" cy="170" r="1.5"/><circle cx="238" cy="170" r="1.5"/>
+        <circle cx="254" cy="170" r="1.5"/><circle cx="270" cy="170" r="1.5"/><circle cx="286" cy="170" r="1.5"/>
+        <circle cx="302" cy="170" r="1.5"/><circle cx="318" cy="170" r="1.5"/><circle cx="334" cy="170" r="1.5"/>
+        <circle cx="350" cy="170" r="1.5"/><circle cx="366" cy="170" r="1.5"/><circle cx="382" cy="170" r="1.5"/>
+      </g>
+
+      <!-- Pegboard accessories -->
+      <!-- K-Cup container -->
+      <rect x="200" y="158" width="32" height="38" rx="2" fill="rgba(255,255,255,0.06)" stroke="#4a5060" stroke-width="0.6"/>
+      <text x="216" y="180" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">K-CUP</text>
+      <text x="216" y="188" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">PODS</text>
+
+      <!-- Sugar container -->
+      <rect x="240" y="158" width="32" height="38" rx="2" fill="rgba(255,255,255,0.06)" stroke="#4a5060" stroke-width="0.6"/>
+      <text x="256" y="180" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">SUGAR</text>
+      <text x="256" y="188" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">PKT</text>
+
+      <!-- Small shelf on pegboard -->
+      <line x1="286" y1="176" x2="370" y2="176" stroke="#4a5060" stroke-width="1.2"/>
+      <rect x="290" y="163" width="24" height="13" rx="1" fill="rgba(255,255,255,0.05)" stroke="#4a5060" stroke-width="0.4"/>
+      <rect x="320" y="163" width="24" height="13" rx="1" fill="rgba(255,255,255,0.05)" stroke="#4a5060" stroke-width="0.4"/>
+      <text x="328" y="157" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">CREAMER / STIR</text>
+
+      <!-- Hooks for utensils -->
+      <g stroke="#4a5060" stroke-width="0.6" fill="none">
+        <path d="M210,215 L210,228 Q210,232 214,232"/>
+        <path d="M226,215 L226,228 Q226,232 230,232"/>
+        <path d="M242,215 L242,228 Q242,232 246,232"/>
+      </g>
+      <text x="226" y="244" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">HOOKS — UTENSILS</text>
+
+      <!-- Small shelf holder right side -->
+      <rect x="300" y="210" width="60" height="30" rx="2" fill="rgba(255,255,255,0.04)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="330" y="228" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">SYRUPS</text>
+
+
+      <!-- =============================================
+           ZONE C: DIVIDER SHELF
+           y=276 to y=286
+           ============================================= -->
+
+      <rect x="182" y="276" width="276" height="6" fill="#2a2520" stroke="#4a4035" stroke-width="0.8"/>
+
+
+      <!-- =============================================
+           ZONE D: COFFEE MAKER ZONE
+           y=286 to y=390 (13")
+           ============================================= -->
+
+      <text x="188" y="298" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843" letter-spacing="1.5">C · COFFEE STATION</text>
+
+      <!-- Shelf surface at y=382 for coffee maker to sit on -->
+      <rect x="182" y="382" width="276" height="6" fill="#2a2520" stroke="#4a4035" stroke-width="0.8"/>
+
+      <!-- Chulux coffee maker — 4.0"W × 11.0"H = 32px × 88px -->
+      <!-- Reference: actual unit photo showing ribbed front, chrome lid, round base -->
+      <g transform="translate(284, 294)">
+        <!-- Round base / drip tray platform -->
+        <ellipse cx="16" cy="86" rx="18" ry="4" fill="#e8e6e2" stroke="#ccc" stroke-width="0.6"/>
+        <rect x="-2" y="82" width="36" height="4" rx="1" fill="#e8e6e2" stroke="#ccc" stroke-width="0.5"/>
+        <!-- Drip grate (chrome ring in base) -->
+        <ellipse cx="16" cy="82" rx="10" ry="2.5" fill="#c0beb8" stroke="#aaa" stroke-width="0.3"/>
+
+        <!-- Mug on drip tray -->
+        <path d="M6,60 L8,80 Q8,82 10,82 L22,82 Q24,82 24,80 L26,60 Z" fill="#cec8be" stroke="#b5b0a5" stroke-width="0.6"/>
+        <!-- Mug handle -->
+        <path d="M24,64 Q30,64 30,70 Q30,76 24,76" fill="none" stroke="#b5b0a5" stroke-width="0.8"/>
+        <!-- Mug interior rim -->
+        <ellipse cx="16" cy="60" rx="10" ry="3" fill="#bab4aa" stroke="#a5a098" stroke-width="0.4"/>
+
+        <!-- Lower body — vertical ribbed/fluted texture -->
+        <rect x="4" y="34" width="24" height="28" rx="1" fill="#f0efeb" stroke="#ddd" stroke-width="0.6"/>
+        <!-- Ribbed texture lines -->
+        <g stroke="#e2e0dc" stroke-width="0.25">
+          <line x1="7" y1="36" x2="7" y2="61"/>
+          <line x1="9" y1="36" x2="9" y2="61"/>
+          <line x1="11" y1="36" x2="11" y2="61"/>
+          <line x1="13" y1="36" x2="13" y2="61"/>
+          <line x1="15" y1="36" x2="15" y2="61"/>
+          <line x1="17" y1="36" x2="17" y2="61"/>
+          <line x1="19" y1="36" x2="19" y2="61"/>
+          <line x1="21" y1="36" x2="21" y2="61"/>
+          <line x1="23" y1="36" x2="23" y2="61"/>
+          <line x1="25" y1="36" x2="25" y2="61"/>
+        </g>
+
+        <!-- Black dispensing nozzle -->
+        <circle cx="16" cy="35" r="3" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="0.4"/>
+        <circle cx="16" cy="35" r="1" fill="#111"/>
+
+        <!-- Upper body — smooth white with CHULUX branding -->
+        <rect x="2" y="14" width="28" height="20" rx="3" fill="#f2f1ed" stroke="#ccc" stroke-width="0.8"/>
+        <!-- CHULUX label -->
+        <text x="16" y="27" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="4.5" fill="#222" font-weight="bold" letter-spacing="0.5">CHULUX</text>
+
+        <!-- Chrome K-cup ring — prominent silver band -->
+        <rect x="1" y="8" width="30" height="7" rx="3" fill="#c0bfb8" stroke="#a0a0a0" stroke-width="0.6"/>
+        <!-- Chrome highlight -->
+        <rect x="3" y="9" width="26" height="2.5" rx="1.5" fill="#d5d5cf" opacity="0.7"/>
+
+        <!-- Top lid — barely visible straight on, just a thin sliver -->
+        <rect x="2" y="6" width="28" height="3" rx="1.5" fill="#eae9e5" stroke="#ddd" stroke-width="0.4"/>
+
+        <!-- Side edges (body runs full height behind ribbing) -->
+        <line x1="2" y1="14" x2="2" y2="82" stroke="#ddd" stroke-width="0.4"/>
+        <line x1="30" y1="14" x2="30" y2="82" stroke="#ddd" stroke-width="0.4"/>
+      </g>
+
+      <text x="300" y="376" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#5a6070">CHULUX 4.0″W × 11″H</text>
+
+      <!-- Small tray / catchment area beside coffee maker -->
+      <rect x="190" y="358" width="70" height="22" rx="2" fill="rgba(255,255,255,0.04)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="225" y="372" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">TRAY/DRIP</text>
+
+      <rect x="340" y="358" width="70" height="22" rx="2" fill="rgba(255,255,255,0.04)" stroke="#4a5060" stroke-width="0.5"/>
+      <text x="375" y="372" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">NAPKINS</text>
+
+
+      <!-- =============================================
+           ZONE E: KLGO LOCKER BANK
+           y=392 to y=506 (~14.25")
+           4 × stadium profile lockers rotated 90°
+           Each face: 5.74"W × 12.79"H at 8px/inch
+             = 46px W × 102px H
+           4 × 46 + 3 × 2 spacers = 190px
+           Centered in 276px interior: x = 182 + (276-190)/2 = 225
+           ============================================= -->
+
+      <text x="320" y="404" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#cc6633" letter-spacing="1.5">D · KLGO LOCKER BANK — 4 UNITS ROTATED 90°</text>
+
+      <!-- Locker bank housing frame — right-aligned -->
+      <rect x="259" y="410" width="196" height="108" rx="2" fill="none" stroke="#cc6633" stroke-width="0.8" stroke-dasharray="4,2" opacity="0.4"/>
+
+      <!-- LOCKER 1 — Stadium profile -->
+      <g transform="translate(262, 413)">
+        <!-- Stadium outline: 46px W × 102px H, R=23px semicircular ends -->
+        <rect width="46" height="102" rx="23" ry="23" fill="#e8e5df" stroke="#bbb" stroke-width="1"/>
+        <!-- Inner face -->
+        <rect x="3" y="3" width="40" height="96" rx="20" ry="20" fill="#f0efea" stroke="#ccc" stroke-width="0.6"/>
+        <!-- Button: vertical capsule at 82% across, 49% down -->
+        <!-- 82% of 46 = 37.7 → cx=38, 49% of 102 = 50 → cy=50 -->
+        <!-- 0.5"W=4px, 1.3"H=10px, rx=2 for capsule ends -->
+        <rect x="36" y="45" width="4" height="10" rx="2" ry="2" fill="#d5d2cc" stroke="#b0ada8" stroke-width="0.5"/>
+        <!-- Locker number -->
+        <text x="23" y="30" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#888" font-weight="bold">01</text>
+      </g>
+
+      <!-- Spacer -->
+      <rect x="309" y="413" width="2" height="102" fill="#1a1c20"/>
+
+      <!-- LOCKER 2 -->
+      <g transform="translate(312, 413)">
+        <rect width="46" height="102" rx="23" ry="23" fill="#e8e5df" stroke="#bbb" stroke-width="1"/>
+        <rect x="3" y="3" width="40" height="96" rx="20" ry="20" fill="#f0efea" stroke="#ccc" stroke-width="0.6"/>
+        <rect x="36" y="45" width="4" height="10" rx="2" ry="2" fill="#d5d2cc" stroke="#b0ada8" stroke-width="0.5"/>
+        <text x="23" y="30" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#888" font-weight="bold">02</text>
+      </g>
+
+      <!-- Spacer -->
+      <rect x="359" y="413" width="2" height="102" fill="#1a1c20"/>
+
+      <!-- LOCKER 3 -->
+      <g transform="translate(362, 413)">
+        <rect width="46" height="102" rx="23" ry="23" fill="#e8e5df" stroke="#bbb" stroke-width="1"/>
+        <rect x="3" y="3" width="40" height="96" rx="20" ry="20" fill="#f0efea" stroke="#ccc" stroke-width="0.6"/>
+        <rect x="36" y="45" width="4" height="10" rx="2" ry="2" fill="#d5d2cc" stroke="#b0ada8" stroke-width="0.5"/>
+        <text x="23" y="30" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#888" font-weight="bold">03</text>
+      </g>
+
+      <!-- Spacer -->
+      <rect x="409" y="413" width="2" height="102" fill="#1a1c20"/>
+
+      <!-- LOCKER 4 -->
+      <g transform="translate(412, 413)">
+        <rect width="46" height="102" rx="23" ry="23" fill="#e8e5df" stroke="#bbb" stroke-width="1"/>
+        <rect x="3" y="3" width="40" height="96" rx="20" ry="20" fill="#f0efea" stroke="#ccc" stroke-width="0.6"/>
+        <rect x="36" y="45" width="4" height="10" rx="2" ry="2" fill="#d5d2cc" stroke="#b0ada8" stroke-width="0.5"/>
+        <text x="23" y="30" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#888" font-weight="bold">04</text>
+      </g>
+
+      <!-- KLGO dimension lines -->
+      <!-- Single locker width -->
+      <line x1="262" y1="524" x2="308" y2="524" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="262" y1="520" x2="262" y2="528" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="308" y1="520" x2="308" y2="528" stroke="#cc6633" stroke-width="0.5"/>
+      <text x="285" y="534" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#cc6633">5.74″</text>
+
+      <!-- Total bank width -->
+      <line x1="262" y1="542" x2="458" y2="542" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="262" y1="538" x2="262" y2="546" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="458" y1="538" x2="458" y2="546" stroke="#cc6633" stroke-width="0.5"/>
+      <text x="360" y="552" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#cc6633">23.3″ total bank → right-aligned</text>
+
+      <!-- Locker height (left side of bank) -->
+      <line x1="252" y1="413" x2="252" y2="515" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="248" y1="413" x2="256" y2="413" stroke="#cc6633" stroke-width="0.5"/>
+      <line x1="248" y1="515" x2="256" y2="515" stroke="#cc6633" stroke-width="0.5"/>
+      <text x="242" y="468" font-family="Share Tech Mono, monospace" font-size="6" fill="#cc6633" transform="rotate(-90,242,468)">12.79″H</text>
+
+
+      <!-- =============================================
+           ZONE F: OPEN STORAGE / WASTE BIN
+           y=560 to y=716 (~20")
+           ============================================= -->
+
+      <text x="188" y="572" font-family="Share Tech Mono, monospace" font-size="7" fill="#d4a843" letter-spacing="1.5">E · OPEN STORAGE</text>
+
+      <!-- Waste bin silhouette (standard upright position) -->
+      <rect x="280" y="582" width="80" height="128" rx="4" fill="rgba(255,255,255,0.03)" stroke="#3a4050" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="320" y="650" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#5a6070">WASTE</text>
+      <text x="320" y="660" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="6" fill="#5a6070">BIN</text>
+
+      <!-- Extra storage on sides of waste bin -->
+      <rect x="192" y="582" width="76" height="50" rx="2" fill="rgba(255,255,255,0.02)" stroke="#3a4050" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <text x="230" y="610" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">SPARE</text>
+
+      <rect x="372" y="582" width="76" height="50" rx="2" fill="rgba(255,255,255,0.02)" stroke="#3a4050" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <text x="410" y="610" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="5" fill="#5a6070">SPARE</text>
+
+
+      <!-- =============================================
+           FLOOR LINE
+           ============================================= -->
+
+      <line x1="140" y1="730" x2="500" y2="730" stroke="#3a4050" stroke-width="2"/>
+      <text x="320" y="745" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="8" fill="#5a6070">FLOOR</text>
+
+
+      <!-- =============================================
+           OVERALL DIMENSION LINES
+           ============================================= -->
+
+      <!-- Width (bottom) -->
+      <line x1="170" y1="760" x2="470" y2="760" stroke="#5a6070" stroke-width="0.8"/>
+      <line x1="170" y1="753" x2="170" y2="767" stroke="#5a6070" stroke-width="0.8"/>
+      <line x1="470" y1="753" x2="470" y2="767" stroke="#5a6070" stroke-width="0.8"/>
+      <text x="320" y="776" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070">36″ (3 ft)</text>
+
+      <!-- Height (right side) -->
+      <line x1="490" y1="50" x2="490" y2="722" stroke="#5a6070" stroke-width="0.8"/>
+      <line x1="484" y1="50" x2="496" y2="50" stroke="#5a6070" stroke-width="0.8"/>
+      <line x1="484" y1="722" x2="496" y2="722" stroke="#5a6070" stroke-width="0.8"/>
+      <text x="504" y="390" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="9" fill="#5a6070" transform="rotate(90,504,390)">84″ (7 ft)</text>
+
+      <!-- Interior usable height (left side) -->
+      <line x1="152" y1="56" x2="152" y2="716" stroke="#5a6070" stroke-width="0.5"/>
+      <line x1="147" y1="56" x2="157" y2="56" stroke="#5a6070" stroke-width="0.5"/>
+      <line x1="147" y1="716" x2="157" y2="716" stroke="#5a6070" stroke-width="0.5"/>
+      <text x="140" y="390" text-anchor="middle" font-family="Share Tech Mono, monospace" font-size="7" fill="#5a6070" transform="rotate(-90,140,390)">82.5″ interior</text>
+
+
+      <!-- =============================================
+           ZONE HEIGHT CALLOUTS (left side)
+           ============================================= -->
+
+      <!-- Zone A height -->
+      <line x1="162" y1="56" x2="162" y2="116" stroke="#d4a843" stroke-width="0.4"/>
+      <text x="164" y="90" font-family="Share Tech Mono, monospace" font-size="5" fill="#8a6e2a">7.5″</text>
+
+      <!-- Zone B height -->
+      <line x1="162" y1="120" x2="162" y2="276" stroke="#d4a843" stroke-width="0.4"/>
+      <text x="164" y="200" font-family="Share Tech Mono, monospace" font-size="5" fill="#8a6e2a">19.5″</text>
+
+      <!-- Zone D height -->
+      <line x1="162" y1="286" x2="162" y2="388" stroke="#d4a843" stroke-width="0.4"/>
+      <text x="164" y="340" font-family="Share Tech Mono, monospace" font-size="5" fill="#8a6e2a">13″</text>
+
+      <!-- Zone E locker zone -->
+      <line x1="162" y1="392" x2="162" y2="556" stroke="#cc6633" stroke-width="0.4"/>
+      <text x="164" y="478" font-family="Share Tech Mono, monospace" font-size="5" fill="#cc6633">14″</text>
+
+      <!-- Zone F open -->
+      <line x1="162" y1="560" x2="162" y2="716" stroke="#d4a843" stroke-width="0.4"/>
+      <text x="164" y="640" font-family="Share Tech Mono, monospace" font-size="5" fill="#8a6e2a">~20″</text>
+
+
+      <!-- =============================================
+           CALLOUT ARROWS
+           ============================================= -->
+
+      <!-- Arrow to locker bank -->
+      <line x1="100" y1="464" x2="255" y2="464" stroke="#cc6633" stroke-width="0.8" stroke-dasharray="4,3"/>
+      <polygon points="255,461 262,464 255,467" fill="#cc6633"/>
+      <text x="95" y="454" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="7" fill="#cc6633">KLGO ×4</text>
+      <text x="95" y="464" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="6" fill="#cc6633">STADIUM PROFILE</text>
+      <text x="95" y="474" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="6" fill="#cc6633">ROTATED 90°</text>
+      <text x="95" y="484" text-anchor="end" font-family="Share Tech Mono, monospace" font-size="6" fill="#cc6633">= PERSONAL LOCKERS</text>
+
+      <!-- Arrow to coffee maker -->
+      <line x1="540" y1="340" x2="328" y2="340" stroke="#3a7abd" stroke-width="0.8" stroke-dasharray="4,3"/>
+      <polygon points="328,337 321,340 328,343" fill="#3a7abd"/>
+      <text x="545" y="332" font-family="Share Tech Mono, monospace" font-size="7" fill="#3a7abd">CHULUX SLIM</text>
+      <text x="545" y="342" font-family="Share Tech Mono, monospace" font-size="6" fill="#3a7abd">4.0″W × 11″H</text>
+      <text x="545" y="352" font-family="Share Tech Mono, monospace" font-size="6" fill="#3a7abd">K-CUP SINGLE SERVE</text>
+
+      <!-- Arrow to pegboard -->
+      <line x1="540" y1="190" x2="458" y2="190" stroke="#4a9e6a" stroke-width="0.8" stroke-dasharray="4,3"/>
+      <polygon points="458,187 451,190 458,193" fill="#4a9e6a"/>
+      <text x="545" y="182" font-family="Share Tech Mono, monospace" font-size="7" fill="#4a9e6a">SKÅDIS 36×22″</text>
+      <text x="545" y="192" font-family="Share Tech Mono, monospace" font-size="6" fill="#4a9e6a">PEGBOARD W/</text>
+      <text x="545" y="202" font-family="Share Tech Mono, monospace" font-size="6" fill="#4a9e6a">ACCESSORIES</text>
+
+    </svg>
+  </div>
+
+  <!-- CALLOUT BOXES -->
+  <div class="callouts">
+    <div class="callout-box">
+      <div class="label">Billy Bookcase</div>
+      <div class="detail">
+        IKEA BILLY — no shelves<br>
+        36″W × 84″H × 11″D<br>
+        Interior: 34.5″W × 82.5″H<br>
+        Freestanding, wall-anchored
+      </div>
+    </div>
+    <div class="callout-box">
+      <div class="label">KLGO Locker Bank</div>
+      <div class="detail">
+        4× KLGO 2.4 Gal Slim (B089Y36RST)<br>
+        Rotated 90° — stadium profile face<br>
+        Each: 5.74″W × 12.79″H<br>
+        Button: 0.5″W × 1.3″H vertical capsule<br>
+        Bank: 23.3″W — right-aligned in 34.5″ bay
+      </div>
+    </div>
+    <div class="callout-box">
+      <div class="label">Zone Layout (top → bottom)</div>
+      <div class="detail">
+        A · Upper shelf — KUGGIS + mugs (7.5″)<br>
+        B · SKÅDIS pegboard zone (19.5″)<br>
+        C · Coffee station + Chulux (13″)<br>
+        D · KLGO locker bank ×4 (14″)<br>
+        E · Open storage / waste (20″)
+      </div>
+    </div>
+    <div class="callout-box">
+      <div class="label">Changes from Rev 04</div>
+      <div class="detail">
+        ▸ Unit: Billy bookcase replaces 48″ wall bay<br>
+        ▸ TRONES columns: removed<br>
+        ▸ Lockers: stadium profile (rounded ends)<br>
+        ▸ Button: corrected vertical capsule shape<br>
+        ▸ Width: 36″ (was 48″)
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
