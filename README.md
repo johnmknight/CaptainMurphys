@@ -23,7 +23,7 @@ This repository serves as a build log, design reference library, and planning to
 
 | File | Description |
 |------|-------------|
-| `nostromo-ikea.html` | IKEA product guide — 7 accessories matched to the Nostromo galley aesthetic with current pricing and product links |
+| `nostromo-ikea.html` | Product sourcing guide — 7 IKEA accessories + Keurig K·Iced Plus coffee maker, organized by subsystem (galley storage, coffee bar/mess area) with pricing and product links |
 
 ## Tech stack
 
