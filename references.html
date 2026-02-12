@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USCSS Nostromo — Visual Reference Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Chakra+Petch:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0c0f; --panel: #12161c; --border: #2a3040;
+    --accent: #d4a843; --accent-dim: #8a6e2a;
+    --text: #c8cdd4; --text-dim: #6a7080;
+    --green: #4a9e6a; --green-dim: #1a3a28; --white: #e8ecf0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Chakra Petch', 'Segoe UI', monospace; min-height: 100vh; }
+  body::after { content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px); pointer-events: none; z-index: 1000; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+  .header { border: 1px solid var(--border); padding: 24px 30px; margin-bottom: 30px; position: relative; background: linear-gradient(180deg, rgba(30,35,45,0.6) 0%, var(--panel) 100%); }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dim) 40%, transparent 100%); }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .header-logo { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 3px; text-transform: uppercase; }
+  .header-status { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--green); letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
+  .header-status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s ease-in-out infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .header h1 { font-family: 'Chakra Petch', monospace; font-size: 28px; font-weight: 700; color: var(--accent); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  .header-sub { font-family: 'Share Tech Mono', monospace; font-size: 12px; color: var(--text-dim); letter-spacing: 1px; }
+  .nav-link { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
+  .nav-link:hover { text-decoration: underline; }
+  .section-divider { margin: 30px 0 16px 0; padding: 12px 20px; border: 1px solid var(--border); border-left: 3px solid var(--accent); background: var(--panel); }
+  .section-label { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+  .section-title { font-family: 'Chakra Petch', monospace; font-size: 20px; font-weight: 700; color: var(--white); letter-spacing: 2px; }
+  .section-sub { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 4px; margin-bottom: 4px; }
+  .ref-card { border: 1px solid var(--border); background: var(--panel); transition: background 0.2s, border-color 0.2s; overflow: hidden; }
+  .ref-card:hover { background: rgba(212,168,67,0.04); border-color: var(--accent-dim); }
+  .ref-card img { width: 100%; height: 260px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+  .ref-card.hero img { height: 400px; }
+  .ref-caption { padding: 10px 14px; }
+  .ref-caption .title { font-family: 'Chakra Petch', monospace; font-size: 14px; font-weight: 600; color: var(--accent); letter-spacing: 1px; margin-bottom: 3px; }
+  .ref-caption .note { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); line-height: 1.5; }
+  .ref-hero { margin-bottom: 4px; border: 1px solid var(--border); background: var(--panel); overflow: hidden; transition: border-color 0.2s; }
+  .ref-hero:hover { border-color: var(--accent-dim); }
+  .ref-hero img { width: 100%; max-height: 500px; object-fit: cover; display: block; border-bottom: 1px solid var(--border); }
+  .ref-hero .ref-caption { padding: 12px 16px; }
+  .footer { display: flex; justify-content: space-between; font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 2px; padding: 20px 0; margin-top: 30px; border-top: 1px solid var(--border); }
+  @media (max-width: 700px) { .ref-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-top">
+      <div class="header-logo">Weyland-Yutani Corp ◦ Design Division</div>
+      <div class="header-status"><span class="dot"></span> ARCHIVE ACTIVE</div>
+    </div>
+    <h1>Visual Reference Library</h1>
+    <div class="header-sub">Coffee Bar / Mess Area — Design Targets &amp; Source Material ◦ REF-2183-NK</div>
+    <div style="margin-top: 10px;"><a class="nav-link" href="nostromo-ikea.html">← Back to Product Guide</a></div>
+  </div>
+
+  <!-- SECTION: ALIEN / NOSTROMO -->
+  <div class="section-divider">
+    <div class="section-label">Source</div>
+    <div class="section-title">ALIEN / NOSTROMO</div>
+    <div class="section-sub">USCSS Nostromo galley &amp; mess hall — Alien (1979), Alien: Isolation (2014)</div>
+  </div>
+
+  <div class="ref-hero">
+    <img src="images/references/nostromo-mess-hall-galley.webp" alt="Nostromo mess hall galley — full frontal view">
+    <div class="ref-caption">
+      <div class="title">Nostromo Mess Hall — Galley Wall</div>
+      <div class="note">PRIMARY REFERENCE — The target. White mugs on a rail, twin coffee makers, brown storage canisters above, white locker panels flanking both sides. Every product in the sourcing guide maps back to this image.</div>
+    </div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <img src="images/references/nostromo-kitchen-bts.png" alt="Nostromo kitchen behind the scenes">
+      <div class="ref-caption">
+        <div class="title">Nostromo Kitchen — BTS Set Photo</div>
+        <div class="note">Original 1979 set. Kitchen galley viewed from mess table. White modular wall panels, counter surface, overhead storage. Note the locker grid on the far wall — the TRONES mapping.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/nostromo-galley-wall.jpg" alt="Nostromo galley wall storage panels">
+      <div class="ref-caption">
+        <div class="title">Nostromo Galley Wall — Storage Panels</div>
+        <div class="note">Close-up of the galley wall storage system. White modular panels with dark slot vents, stacked vertically. This is what the KLGO sideways locker bank is replicating.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/nostromo-galley-3d-render.webp" alt="Nostromo galley 3D fan art render">
+      <div class="ref-caption">
+        <div class="title">Nostromo Galley — 3D Fan Art</div>
+        <div class="note">3D reconstruction by emelnikov (ArtStation). Viewed through doorway — mugs on rail, white coffee maker, food supplies behind grid window, white locker panels. Excellent spatial reference for the 24" column layout.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/alien-isolation-galley.jpg" alt="Alien Isolation galley area">
+      <div class="ref-caption">
+        <div class="title">Alien: Isolation — Sevastopol Galley</div>
+        <div class="note">In-game screenshot. Kitchen counter with white storage units below, white locker panels above. The Isolation team recreated the Nostromo aesthetic with slightly more industrial grime. Note the amber lighting on the right wall.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: MOON (2009) -->
+  <div class="section-divider">
+    <div class="section-label">Source</div>
+    <div class="section-title">MOON (2009)</div>
+    <div class="section-sub">Sarang Station — Lunar Helium-3 mining facility, directed by Duncan Jones</div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <img src="images/references/moon-sarang-workstation.webp" alt="Moon Sarang station workstation">
+      <div class="ref-caption">
+        <div class="title">Sarang Station — Workstation</div>
+        <div class="note">Clean white panels, blue-lit viewport, integrated desk and display. The most "lived-in lunar hab" aesthetic in film. Closest visual match to the Captain Murphy's workspace intent.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/moon-sarang-corridor.jpg" alt="Moon Sarang station corridor">
+      <div class="ref-caption">
+        <div class="title">Sarang Station — Corridor</div>
+        <div class="note">Hexagonal doorway, white paneled walls, blue accent lighting. The geometric door frames and panel-to-panel transitions are key design language elements.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/moon-sarang-rec-room.jpg" alt="Moon Sarang station rec room">
+      <div class="ref-caption">
+        <div class="title">Sarang Station — Rec Room</div>
+        <div class="note">Treadmill, white walls, overhead panels. Shows how a functional utility space reads as "habitat" rather than "spaceship" — the distinction Captain Murphy's is targeting.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: INTERSTELLAR -->
+  <div class="section-divider">
+    <div class="section-label">Source</div>
+    <div class="section-title">INTERSTELLAR (2014)</div>
+    <div class="section-sub">Endurance spacecraft interiors — directed by Christopher Nolan</div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <img src="images/references/interstellar-endurance-interior.webp" alt="Interstellar Endurance interior">
+      <div class="ref-caption">
+        <div class="title">Endurance — Interior Module</div>
+        <div class="note">Modular white soft-pack storage covering every surface. NASA-accurate stowage approach — every wall is storage. The white-on-metal-frame look is the KUGGIS/TROFAST mapping at industrial scale.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/interstellar-endurance-storage.jpg" alt="Interstellar Endurance storage walls">
+      <div class="ref-caption">
+        <div class="title">Endurance — Storage Walls</div>
+        <div class="note">Full corridor view. White soft-pack modules floor to ceiling with metal frame structure. The density of modular white containers is the aesthetic target for upper shelving.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/interstellar-endurance-bts.jpg" alt="Interstellar Endurance set behind the scenes">
+      <div class="ref-caption">
+        <div class="title">Endurance — Behind the Scenes</div>
+        <div class="note">Nolan on the Endurance set. Shows the physical construction — real metal grating floors, practical white storage cases, functional hatches. Built, not CGI. Same approach as Captain Murphy's.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: FOR ALL MANKIND -->
+  <div class="section-divider">
+    <div class="section-label">Source</div>
+    <div class="section-title">FOR ALL MANKIND</div>
+    <div class="section-sub">Jamestown &amp; Happy Valley lunar bases — Apple TV+</div>
+  </div>
+
+  <div class="ref-grid">
+    <div class="ref-card">
+      <img src="images/references/fam-jamestown-hab.jpg" alt="For All Mankind Jamestown habitat">
+      <div class="ref-caption">
+        <div class="title">Jamestown Base — Hab Interior</div>
+        <div class="note">Storage lockers, strapped cargo bags, galley area visible through window. The most grounded, functional lunar hab in current media. White storage + metal frame + overhead fluorescents = the Captain Murphy's tonal target.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/fam-galley-scene.webp" alt="For All Mankind galley scene">
+      <div class="ref-caption">
+        <div class="title">Happy Valley — Galley / Kitchen</div>
+        <div class="note">Working kitchen in a lunar hab. Industrial appliances, overhead storage, display screens. The "someone actually cooks here" quality is what separates a hab from a set.</div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <img src="images/references/fam-command-center.jpg" alt="For All Mankind command center">
+      <div class="ref-caption">
+        <div class="title">Happy Valley — Command Center</div>
+        <div class="note">Panoramic set photo. White panels, integrated displays, overhead panel lighting, equipment racks. Reference for how Captain Murphy's workspace zone connects to the coffee bar zone.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: CONCEPT ART -->
+  <div class="section-divider">
+    <div class="section-label">Source</div>
+    <div class="section-title">CONCEPT ART / RENDERS</div>
+    <div class="section-sub">Fan art, 3D renders, and concept work — aspirational targets</div>
+  </div>
+
+  <div class="ref-hero">
+    <img src="images/references/concept-hab-common-room.jpg" alt="Sci-fi habitat common room concept">
+    <div class="ref-caption">
+      <div class="title">Habitat Common Room — Concept Render</div>
+      <div class="note">Lived-in hab module with curved seating, starfield viewport, board games, bonsai, personal photos, bookshelves. The "people actually live here" quality. Note the equipment panels on the left wall, hexagonal carpet pattern (nod to The Shining), and warm lighting mixed with clinical white. This is the aspirational endgame — a space that reads as both functional and personal.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>WEYLAND-YUTANI CORP ◦ DESIGN DIVISION ◦ GATEWAY STATION</span>
+    <span>REF-2183-NK ◦ 15 REFERENCE IMAGES ◦ 2183.02.12</span>
+  </div>
+</div>
+</body>
+</html>

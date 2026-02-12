@@ -24,6 +24,7 @@ This repository serves as a build log, design reference library, and planning to
 | File | Description |
 |------|-------------|
 | `nostromo-ikea.html` | Product sourcing guide — 7 IKEA accessories + CHULUX Slim coffee maker + KLGO waste bin, organized by subsystem (galley storage, coffee bar/mess area) with pricing and product links |
+| `references.html` | Visual reference library — 15 images organized by source (Alien/Nostromo, Moon, Interstellar, For All Mankind, concept art) with design notes |
 
 ## Tech stack
 
