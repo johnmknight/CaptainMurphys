@@ -6,9 +6,9 @@
 
 ## About
 
-Captain Murphy's is a personal project to design and build a sci-fi themed home office and bar space. The name is a nod to *Sealab 2021* and the spirit of building something ridiculous with total commitment.
+Captain Murphy's is a personal project to design and build a sci-fi themed home office and bar space. What started as a room planning exercise became something bigger — the process of imagining who would actually live in a space like this, and *why* someone would put a tiki bar in a place like this, eventually became the seed for the novel [*The First Tiki Bar on the Moon*](https://www.amazon.com/dp/B0DRMHV8LT).
 
-The aesthetic pulls from 1970s–80s science fiction — the industrial utilitarian look of the USCSS Nostromo (*Alien*), the lo-fi space station vibe of Sevastopol Station (*Alien: Isolation*), and the warm amber glow of a well-stocked tiki bar in orbit. Think: if Weyland-Yutani built a breakroom that doubled as a dive bar.
+The space draws heavily from 1970s–80s science fiction — the industrial utilitarian look of the USCSS Nostromo (*Alien*), the lo-fi space station vibe of Sevastopol Station (*Alien: Isolation*), and the warm amber glow of a tiki bar that has no business being where it is. If you've read the book, you'll recognize this as something close to Jack Simpson's lunar hab.
 
 ## What's in this repo
 
@@ -35,8 +35,4 @@ This repository serves as a build log, design reference library, and planning to
 
 A workspace that feels like you're stationed on a deep-space commercial towing vessel — but with better coffee and a liquor shelf. Modular white storage panels, pegboard equipment racks, institutional mugs on a rail, and warm accent lighting cutting through the cold utility of it all.
 
-Half office. Half bar. Fully committed to the bit.
-
----
-
-*"Look, I am… I've heard enough of this, and I'm asking you to revise that opinion, Ash." — Dallas*
+Half office. Half bar. The project that asked the question — and the book that tried to answer it.
